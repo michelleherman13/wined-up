@@ -1,0 +1,273 @@
+state,region,num_wineries
+Arizona,Arizona,12
+Arizona,Cochise County,27
+Arizona,Sonoita,2
+California,Adelaida District,110
+California,Alexander Valley,784
+California,Alta Mesa,9
+California,Amador County,397
+California,Amador-Napa,2
+California,Anderson Valley,646
+California,Antelope Valley of the California High Desert,4
+California,Arroyo Grande Valley,163
+California,Arroyo Seco,211
+California,Atlas Peak,68
+California,Ballard Canyon,79
+California,Ben Lomond Mountain,21
+California,Bennett Valley,75
+California,Big Valley District-Lake County,2
+California,Calaveras County,98
+California,California,2629
+California,California Other,5
+California,California-Oregon,1
+California,Calistoga,149
+California,Capay Valley,3
+California,Carmel Valley,96
+California,Carneros,999
+California,Carneros-Napa Valley,23
+California,Central Coast,749
+California,Central Valley,4
+California,Chalk Hill,88
+California,Chalone,71
+California,Chiles Valley,12
+California,Cienega Valley,22
+California,Clarksburg,105
+California,Clear Lake,28
+California,Clements Hills,16
+California,Cole Ranch,6
+California,Contra Costa County,73
+California,Coombsville,55
+California,Cucamonga Valley,13
+California,Diamond Mountain District,154
+California,Dry Creek Valley,939
+California,Dunnigan Hills,39
+California,Edna Valley,410
+California,El Dorado,310
+California,El Dorado County,20
+California,El Pomar District,7
+California,Fair Play,39
+California,Fiddletown,39
+California,Fort Ross-Seaview,64
+California,Green Valley,205
+California,Guenoc Valley,11
+California,Happy Canyon of Santa Barbara,166
+California,High Valley,45
+California,Howell Mountain,175
+California,Humboldt County,9
+California,Kelsey Bench-Lake County,3
+California,Knights Valley,132
+California,Lake County,278
+California,Lake County-Mendocino County,5
+California,Lake County-Sonoma County,2
+California,Lake-Sonoma-Napa,1
+California,Lime Kiln Valley,2
+California,Livermore Valley,449
+California,Lodi,803
+California,Los Carneros,81
+California,Madera,12
+California,Malibu Coast,4
+California,Malibu-Newton Canyon,4
+California,Marin County,55
+California,McDowell Valley,1
+California,Mendocino,365
+California,Mendocino County,391
+California,Mendocino Ridge,86
+California,Mendocino-Amador,1
+California,Mendocino-Lake,3
+California,Mendocino-Lake County-Napa,2
+California,Mokelumne River,20
+California,Monterey,347
+California,Monterey County,342
+California,Monterey County-Napa County,1
+California,Monterey County-Napa County-Sonoma County,2
+California,Monterey-San Luis Obispo-Santa Barbara,1
+California,Monterey-Santa Barbara,4
+California,Monterey-Santa Barbara-Sonoma,3
+California,Monterey-Santa Cruz,2
+California,Moon Mountain District Sonoma County,19
+California,Mount Harlan,7
+California,Mount Veeder,169
+California,Mt. Harlan,65
+California,Napa,2
+California,Napa County,78
+California,Napa County-Lake County,1
+California,Napa County-Sonoma County,26
+California,Napa County-Sonoma County-Lake County,4
+California,Napa County-Sonoma County-San Joaquin County,2
+California,Napa Valley,4480
+California,Napa Valley-Paso Robles,1
+California,Napa-Amador,1
+California,Napa-Carneros,2
+California,Napa-Mendocino-Sonoma,3
+California,Napa-Mendocino-Sonoma-Marin,7
+California,Napa-Monterey-Mendocino,1
+California,Napa-Sonoma,19
+California,Napa-Sonoma-Marin,1
+California,Nevada County,6
+California,North Coast,356
+California,Northern Sonoma,18
+California,Oak Knoll District,135
+California,Oakville,288
+California,Paicines,31
+California,Paso Robles,2350
+California,Paso Robles Highlands District,1
+California,Paso Robles Willow Creek District,56
+California,Pine Mountain-Cloverdale Peak,14
+California,Placer County,6
+California,Potter Valley,59
+California,Ramona Valley,2
+California,Red Hills Lake County,91
+California,Redwood Valley,35
+California,River Junction,8
+California,Rockpile,72
+California,Russian River Valley,3091
+California,Rutherford,411
+California,Saddle Rock-Malibu,7
+California,San Antonio Valley,10
+California,San Benito County,38
+California,San Bernabe,9
+California,San Diego County,2
+California,San Francisco Bay,14
+California,San Francisco Bay-Livermore Valley,8
+California,San Lucas,5
+California,San Luis Obispo,15
+California,San Luis Obispo County,130
+California,Santa Barbara,14
+California,Santa Barbara County,1000
+California,Santa Barbara-Monterey,3
+California,Santa Clara County,5
+California,Santa Clara Valley,104
+California,Santa Cruz County,2
+California,Santa Cruz Mountains,548
+California,Santa Lucia Highlands,806
+California,Santa Margarita Ranch,12
+California,Santa Maria Valley,704
+California,Santa Ynez Valley,812
+California,Shenandoah Valley (CA),143
+California,Sierra Foothills,399
+California,Sierra Pelona Valley,2
+California,Solano County,30
+California,Solano County Green Valley,3
+California,Sonoma,5
+California,Sonoma Coast,1474
+California,Sonoma County,1246
+California,Sonoma County-Lake County,3
+California,Sonoma County-Monterey County,4
+California,Sonoma County-Monterey County-Napa County,5
+California,Sonoma County-Monterey County-Santa Barbara County,6
+California,Sonoma County-Napa County,26
+California,Sonoma County-San Joaquin County,3
+California,Sonoma County-Santa Barbara County,1
+California,Sonoma Mountain,142
+California,Sonoma Valley,661
+California,Sonoma-Mendocino,1
+California,Sonoma-Napa,19
+California,Sonoma-Napa-Lake,1
+California,Sonoma-Napa-Mendocino,1
+California,Sonoma-Napa-Monterey,1
+California,Sonoma-Santa Barbara-Mendocino,1
+California,South Coast,58
+California,Spring Mountain District,136
+California,St. Helena,232
+California,Sta. Rita Hills,975
+California,Stags Leap District,155
+California,Suisun Valley,30
+California,Tehama County,1
+California,Temecula,26
+California,Temecula Valley,166
+California,Templeton Gap District,38
+California,Tuolumne County,5
+California,Ventura County,3
+California,Yolo County,47
+California,York Mountain,9
+California,Yorkville Highlands,79
+California,Yountville,92
+Colorado,Colorado,27
+Colorado,Grand Valley,41
+Connecticut,Western Connecticut Highlands,3
+Hawaii,Hawaii,1
+Idaho,Idaho,28
+Illinois,Illinois,6
+Iowa,Iowa,4
+Kentucky,Kentucky,1
+Massachusetts,Massachusetts,1
+Massachusetts,Southeastern New England,6
+Michigan,Lake Michigan Shore,27
+Michigan,Leelanau Peninsula,27
+Michigan,Michigan,14
+Michigan,Old Mission Peninsula,46
+Missouri,Augusta,8
+Missouri,Missouri,25
+Nevada,Nevada,4
+New Jersey,New Jersey,6
+New Jersey,Outer Coastal Plain,2
+New Mexico,New Mexico,45
+New York,Cayuga Lake,72
+New York,Finger Lakes,1565
+New York,Hudson River Region,67
+New York,Lake Erie,5
+New York,Long Island,62
+New York,New York,163
+New York,Niagara Escarpment,1
+New York,North Fork of Long Island,599
+New York,Seneca Lake,135
+New York,"The Hamptons, Long Island",19
+North Carolina,North Carolina,6
+North Carolina,Swan Creek,12
+North Carolina,Yadkin Valley,5
+Ohio,Grand River Valley,10
+Ohio,Isle St. George,1
+Ohio,Ohio,1
+Oregon,Applegate Valley,153
+Oregon,Chehalem Mountains,334
+Oregon,Columbia Gorge (OR),73
+Oregon,Columbia Valley (OR),73
+Oregon,Dundee Hills,554
+Oregon,Elkton Oregon,26
+Oregon,Eola-Amity Hills,276
+Oregon,McMinnville,124
+Oregon,Oregon,460
+Oregon,Oregon Other,3
+Oregon,Polk County,2
+Oregon,Ribbon Ridge,134
+Oregon,Rogue Valley,384
+Oregon,Southern Oregon,122
+Oregon,Umpqua Valley,232
+Oregon,Walla Walla Valley (OR),119
+Oregon,Willamette Valley,2301
+Oregon,Yamhill County,2
+Pennsylvania,Pennsylvania,18
+Rhode Island,Southeastern New England,1
+Texas,Texas,66
+Texas,Texas High Plains,18
+Texas,Texoma,1
+Vermont,Vermont,3
+Virginia,Middleburg,29
+Virginia,Monticello,155
+Virginia,Shenandoah Valley,32
+Virginia,Virginia,556
+Virginia,Virginia's Eastern Shore,5
+Washington,Ancient Lakes,56
+Washington,Chelan County,4
+Washington,Columbia Gorge (WA),86
+Washington,Columbia Valley,2
+Washington,Columbia Valley (WA),4124
+Washington,Columbia Valley-Walla Walla Valley,3
+Washington,Horse Heaven Hills,559
+Washington,Lake Chelan,51
+Washington,Naches Heights,21
+Washington,Puget Sound,4
+Washington,Rattlesnake Hills,98
+Washington,Red Mountain,723
+Washington,Snipes Mountain,57
+Washington,Wahluke Slope,348
+Washington,Walla Walla Valley (WA),1066
+Washington,Washington,440
+Washington,Yakima Valley,997
+New York,"The Hamptons, Long Island",19
+North Carolina,North Carolina,6
+North Carolina,Swan Creek,12
+North Carolina,Yadkin Valley,5
+Ohio,Grand River Valley,10
+Ohio,Isle St. George,1
+Ohio,Ohio,1

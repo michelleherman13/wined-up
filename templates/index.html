@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Theme Made By www.w3schools.com -->
+  <title>Wined Up</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="assets/css/style.css" media="screen">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/5b66a64f77.js" crossorigin="anonymous"></script>
+  <style>
+  body {
+    font-family: 'Raleway', sans-serif;
+    line-height: 1.8;
+    color: black;
+    background-color: #FFFFF0;
+  
+   
+  }
+
+h2 {
+    font-size: 24px;
+    text-transform: uppercase;
+    color: #303030;
+    font-weight: 600;
+    margin-bottom: 30px;
+  }
+  h4 {
+    font-size: 19px;
+    line-height: 1.375em;
+    color: #303030;
+    font-weight: 400;
+    margin-bottom: 30px;
+  }  
+  .jumbotron {
+    background-color: #A72002;
+    color: #FFFFF0;
+    padding: 100px 25px;
+
+  }
+  .container-fluid {
+    padding: 60px 50px;
+  }
+  .bg-grey {
+    background-color:   #FFFFF0;
+  }
+  .logo-small {
+    color: #A72002;
+    font-size: 50px;
+  }
+  .logo {
+    color: #A72002;
+    font-size: 200px;
+  }
+  .thumbnail {
+    padding: 0 0 15px 0;
+    border: none;
+    border-radius: 0;
+  }
+  .thumbnail img {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 10px;
+  }
+  .carousel-control.right, .carousel-control.left {
+    background-image: none;
+    color: #A72002;
+  }
+  .carousel-indicators li {
+    border-color: #A72002;
+  }
+  .carousel-indicators li.active {
+    background-color: #A72002;
+  }
+  .item h4 {
+    font-size: 19px;
+    line-height: 1.375em;
+    font-weight: 400;
+    font-style: italic;
+    margin: 70px 0;
+  }
+  .item span {
+    font-style: normal;
+  }
+  .panel {
+    border: 1px solid #A72002; 
+    border-radius:0 !important;
+    transition: box-shadow 0.5s;
+  }
+  .panel:hover {
+    box-shadow: 5px 0px 40px rgba(0,0,0, .2);
+  }
+  .panel-footer .btn:hover {
+    border: 1px solid #A72002;
+    background-color: #FFFFF0!important;
+    color: #A72002;
+  }
+  .panel-heading {
+    color: #142427 !important;
+    background-color: #A72002 !important;
+    padding: 25px;
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
+  .panel-footer {
+    background-color: #FFFFF0!important;
+  }
+  .panel-footer h3 {
+    font-size: 32px;
+  }
+  .panel-footer h4 {
+    color: #FFFFF0;
+    font-size: 14px;
+  }
+  .panel-footer .btn {
+    margin: 15px 0;
+    background-color: #A72002;
+    color: black;
+  }
+  .navbar {
+    margin-bottom: 0;
+    background-color: #A72002;
+    z-index: 9999;
+    border: 0;
+    font-size: 12px !important;
+    line-height: 1.42857143 !important;
+    letter-spacing: 4px;
+    border-radius: 0;
+    font-family: 'Raleway', sans-serif;
+  }
+  .navbar li a, .navbar .navbar-brand {
+    color: #FFFFF0 !important;
+  }
+  .navbar-nav li a:hover, .navbar-nav li.active a {
+    color: #A72002 !important;
+    background-color: #FFFFF0!important;
+  }
+  .navbar-default .navbar-toggle {
+    border-color: transparent;
+    color: #142427 !important;
+  }
+
+  .fa-glass-cheers:before {
+    color: #A72002;
+
+  }
+  .slideanim {visibility:hidden;}
+  .slide {
+    animation-name: slide;
+    -webkit-animation-name: slide;
+    animation-duration: 1s;
+    -webkit-animation-duration: 1s;
+    visibility: visible;
+  }
+  @keyframes slide {
+    0% {
+      opacity: 0;
+      transform: translateY(70%);
+    } 
+    100% {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+  }
+  @-webkit-keyframes slide {
+    0% {
+      opacity: 0;
+      -webkit-transform: translateY(70%);
+    } 
+    100% {
+      opacity: 1;
+      -webkit-transform: translateY(0%);
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .col-sm-4 {
+      text-align: center;
+      margin: 25px 0;
+    }
+    .btn-lg {
+      width: 100%;
+      margin-bottom: 35px;
+    }
+  }
+  @media screen and (max-width: 480px) {
+    .logo {
+      font-size: 150px;
+    }
+
+    .jumbotron {
+  background-image: url("../img/jumbotron_bg.jpg");
+  background-size: cover;
+}
+  }
+  </style>
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+             
+        <li><a href="#about"><i class="fas fa-wine-glass-alt"></i> About</a></li>
+        <li><a href="#visualizations"><i class="fas fa-wine-glass-alt"></i> Find Wine</a></li>
+        <li><a href="#region-map"><i class="fas fa-wine-glass-alt"></i> Region Map</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Top Cork Sect.. -->
+<div class="jumbotron-fluid text-center" style="background-image: url(https://afreespiritedgirl.files.wordpress.com/2013/11/img_2298.jpg); background-size: 100%;">
+  <div class="container-fluid">
+    <div class="row text-center img-thumbnail img-responsive">
+     <img src="https://i.ibb.co/CBpPXGD/logo6.png" alt="logo6" width="430" height="200">
+    
+    </div>
+
+ </div>
+ </div>
+<form>
+</div>
+    </div>
+  </form>
+</div>
+
+<!-- Container (About Section) -->
+<div id="about" class="container-fluid">
+  <div class="row">
+    <div class="col-sm-8">
+      <h2>WELCOME</h2><br>
+      <h3> <p></p>Hopefully you love wine as much as we do! When many people think of wine, they typically think of Europe or California. While California has awesome wine, there are many homegrown wine vineyards across our beautiful country that we want to promote and appreciate.</h3><br>
+      <h3>We're here for you, whether you're new to wine and want to know which bottle to buy, or if you're a seasoned pro. We can help you find your favorite bottle.</h3><br>
+    </div>
+    <div class="col-sm-4">
+      <br>
+    </br>
+    <br>
+  </br>
+      <img src="https://i.ibb.co/6s0djW6/texas-winery.png" class="img-responsive img-rounded" alt="texas-winery">
+    
+    </div>
+  </div>
+</div>
+<div>
+
+</div>
+
+<!-- Container (Portfolio Section) -->
+<div id="visualizations" class="container-fluid text-center bg-grey">
+  <h2><strong>Find Your New Favorite Wine</strong></h2><br>
+  <h4>Filter by region or flavor and you'll be on your way to finding the wine of your dreams.</h4></br>
+  <h4>Pick a Flavor:   
+    <select id="selFlavor" onchange="flavorChanged(this.value)"></select>&nbsp;&nbsp;&nbsp;Desired Region: <select id="selRegion" onchange="regionSelected(this.value)"></select></h4>
+  <div class="row text-center slideanim">
+    <div class="col-sm-6">
+        <div id="barPoints"></div>
+    </div>
+    <div class="col-sm-6">
+      <div class="thumbnail">
+        <div id="barPrices"></div>
+      
+      </div>
+    </div>
+  </div><br>
+
+  
+  <h2>Wine Fun Facts</h2>
+  <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        <h4>A ton of grapes can be produced into 720 bottles of wine.</span></h4>
+      </div>
+      <div class="item">
+        <h4>Grapes are the most planted fruit all over the world.</span></h4>
+      </div>
+      <div class="item">
+        <h4> There are 10,000 varieties of wine grapes existing worldwide.</span></h4>
+      </div>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
+
+<!-- Container Map Section -->
+<div id="region-map" class="container-fluid"></div>
+<div>                        <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+  <script src="https://cdn.plot.ly/plotly-2.4.2.min.js"></script>                <div id="105a5b14-b54f-4819-95d9-bd0495ce3741" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script type="text/javascript">                                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("105a5b14-b54f-4819-95d9-bd0495ce3741")) {                    Plotly.newPlot(                        "105a5b14-b54f-4819-95d9-bd0495ce3741",                        [{"lat":[34.0489281,31.82845799999999,31.6795337,35.64969680000001,38.6129647,37.398829,38.3488921,38.3401543,39.0865657,34.7513712,35.1443363,23.0752507,38.450743,34.6354195,41.363274,38.4404672,39.0221274,38.1960477,36.778261,36.778261,39.59388999999999,38.5787965,38.7107366,36.4799024,38.2554556,38.2554556,40.7834482,40.19987769999999,38.5682227,36.4701378,38.532564,36.7099602,39.2806451,39.05819049999999,38.19091,35.9733,37.8534093,38.2971707,34.0192133,40.3126723,38.6112043,38.794346,35.2170004,36.1574897,38.74263759999999,38.7921197,37.6321682,38.5039105,38.5140796,31.8542511,38.7358291,34.4206415,33.1503254,38.58139,40.7450055,38.6351857,42.3689363,39.2173837,38.759642,38.5477595,39.15427409999999,37.688744,38.1341477,34.4353532,36.9613356,34.0259216,34.0761256,38.083403,38.976128,39.3076744,39.5500194,39.3076744,38.3488921,39.2173837,38.9812473,38.1097595,36.6002378,36.3136201,38.5024689,36.5977854,36.5407407,34.4217436,34.4392969,36.9741171,38.3459224,36.6974604,38.3793566,36.6974604,38.5024689,38.5024689,38.4963694,38.5779555,38.5477595,37.9175935,38.5024689,35.6444393,38.379799,38.2554556,38.283957,38.283957,38.3634437,38.291859,39.1346666,41.41961149999999,38.4987663,38.35833,43.467517,36.7289127,35.6368759,35.6145763,35.588567,38.854586,39.0915751,39.3221089,33.0467253,31.4724086,39.2652491,43.023122,41.8386562,38.4829842,40.826489,34.09461599999999,37.3917578,36.5760883,34.115784,32.7157305,37.6909682,37.6795353,22.8905327,35.2827524,35.3102296,34.4208305,34.4208305,37.3336581,37.2488478,37.0453988,37.1108921,36.4307709,35.39798440000001,34.898383,34.5841542,38.5348836,33.3235007,34.4769379,38.3104969,38.2529705,38.291859,38.4242109,38.5779555,39.08396440000001,38.5024689,38.4473235,38.291859,38.5779555,38.3229698,38.3668797,38.291859,38.5477595,38.283957,36.5822807,38.283957,33.69100299999999,38.5244649,38.5052,34.66595650000001,38.4141825,38.2638535,40.0982197,33.4936391,33.4739175,33.8213349,38.029655,34.3704884,38.7646021,35.5461,38.8979586,38.40157809999999,39.5500507,42.9641221,41.3966444,19.8967662,44.0682019,40.6331249,41.8780025,37.8393332,42.4072107,41.5294547,42.2208698,45.2083328,44.3148443,44.8839492,33.4734978,37.9642529,38.8026097,40.0583238,39.03678,34.5199402,42.6776693,42.7238165,42.3788592,42.0668852,40.789142,40.7127753,44.7180522,40.9445753,42.6918497,40.924616,35.7595731,36.690549,36.0223527,41.72323340000001,41.72171489999999,40.4172871,42.3244456,45.3762277,45.72530920000001,47.4537758,45.2779,43.6376174,45.1312282,45.2107513,43.8041334,43.8041334,44.9267,45.3596594,42.4401246,42.7976791,43.6474017,46.0655953,44.942554,45.1771983,41.2033216,41.5294547,31.9685988,33.188759,33.7998245,44.5588028,38.9687211,38.0086043,38.4834568,37.4315734,37.5397721,47.1603062,47.9445331,45.72530920000001,47.7340583,48.9220655,46.088215,46.13318779999999,48.0269741,46.64903109999999,47.7236535,46.4379576,37.901662,46.3285408,46.7498928,46.0655953,47.7510741,46.3289058,40.924616,35.7595731,36.690549,36.0223527,41.72323340000001,41.72171489999999,40.4172871],"locationmode":"USA-states","lon":[-111.0937311,-109.949686,-110.6553594,-120.7974514,-122.7694345,-122.1346859,-120.7740931,-122.2819456,-123.4794542,-118.2522977,-120.543623,-109.7241712,-122.2627529,-120.1479918,-111.960498,-122.6766527,-122.8870837,-120.6805037,-119.4179324,-119.4179324,-121.52833,-122.5797054,-122.0471933,-121.7327931,-122.3348556,-122.3348556,-124.1400085,-122.2011075,-122.7710031,-121.2298315,-122.3261472,-121.3349326,-80.34453409999999,-122.831015,-121.08767,-119.035202,-121.9017954,-122.2864459,-117.6279752,-120.6930061,-122.8734439,-121.9552466,-120.6075179,-95.7610321,-120.4357631,-104.8504584,-93.5761735,-120.7565689,-123.2436186,-110.9937019,-122.5282702,-119.6994278,-117.0320642,-122.45,-123.8695086,-122.6941543,-87.8271534,-123.171699,-123.0915605,-122.5106037,-76.9558093,-121.7913508,-121.2722194,-119.8538651,-120.0607176,-118.7797571,-118.8159048,-122.7633036,-123.055829,-123.7994591,-123.438353,-123.7994591,-120.7740931,-123.171699,-122.8452198,-121.5749849,-121.8946761,-121.3541631,-122.2653887,-121.8900577,-121.9077742,-119.7267751,-119.7048868,-122.0307963,-122.4587953,-121.405214,-122.4477575,-121.405214,-122.2653887,-122.2653887,-122.3617618,-122.9888319,-122.5106037,-121.1710389,-122.2653887,-120.6893353,-120.802402,-122.3348556,-122.456822,-122.456822,-75.6022812,-122.4580356,-121.1710389,-81.724004,-122.8018301,-122.33389,-79.6876659,-121.2788708,-120.6545022,-120.6783797,-120.792349,-122.96574,-120.8039474,-123.113059,-116.8591698,-93.8308644,-123.2041429,-91.177422,-103.6559902,-122.8173315,-74.10680909999999,-118.8207687,-121.4903848,-120.9876321,-117.302399,-117.1610966,-122.3107517,-121.7215095,-109.9167371,-120.6596156,-120.4357631,-119.6981901,-119.6981901,-121.8907041,-121.8399593,-121.9579578,-121.8448906,-121.4203754,-120.613122,-120.443036,-120.0973685,-120.792458,-111.9886496,-118.3286905,-121.9017954,-122.1621917,-122.4580356,-123.1011733,-122.9888319,-122.8084496,-122.2653887,-122.730368,-122.4580356,-122.9888319,-122.5749837,-122.4974823,-122.4580356,-122.5106037,-122.456822,-121.8303061,-122.456822,-117.8889767,-122.5512918,-122.633316,-120.1152408,-122.3213126,-122.1139504,-122.174605,-117.1483648,-117.1405868,-116.5452378,-119.9740534,-119.1390642,-121.9017954,-120.8332,-123.2144507,-122.3608105,-105.7820674,-85.8890404,-73.4542967,-155.5827818,-114.7420408,-89.3985283,-93.097702,-84.2700179,-71.3824374,-71.2967937,-86.369469,-85.5417523,-85.60236429999999,-85.50972259999999,-82.0105148,-91.8318334,-116.419389,-74.4056612,-74.78460989999999,-105.8700901,-76.6990172,-76.9297247,-73.7983898,-81.3399414,-73.13496099999999,-74.0059728,-87.5950953,-72.626999,-76.92019200000001,-72.35479149999999,-79.01929969999999,-93.0960394,-81.49009629999999,-81.0525495,-82.82018719999999,-82.90712300000001,-123.2866352,-123.037326,-121.7299656,-120.3251007,-123.011,-123.568152,-123.1637138,-123.1944873,-120.5542012,-120.5542012,-123.4919,-123.094848,-122.9261546,-122.4332992,-123.8468812,-118.3387429,-122.9337615,-123.2395303,-77.1945247,-71.2967937,-99.9018131,-102.8261015,-96.5783387,-72.57784149999999,-77.7355496,-78.4531994,-78.84974849999999,-78.6568942,-75.8229685,-119.9807011,-120.6749068,-121.7299656,-122.1522083,-122.1390398,-118.20394,-119.8678139,-120.3377317,-120.6585503,-122.4713352,-120.2709316,-107.7025,-120.0079879,-119.8342096,-118.3387429,-120.7401385,-120.0086385,-72.35479149999999,-79.01929969999999,-93.0960394,-81.49009629999999,-81.0525495,-82.82018719999999,-82.90712300000001],"marker":{"autocolorscale":false,"cmax":4480,"cmin":0,"color":[12,27,2,110,784,9,397,2,646,4,163,211,68,79,21,75,2,98,2629,5,1,149,3,96,999,23,749,4,88,71,12,22,105,28,16,6,73,55,13,154,939,39,410,310,20,7,39,39,64,205,11,166,45,175,9,132,278,5,2,1,2,449,803,81,12,4,4,55,1,365,391,86,1,3,2,20,347,342,1,2,1,4,3,2,19,7,169,65,2,78,1,26,4,2,4480,1,1,2,3,7,1,19,6,356,18,135,288,31,2350,1,56,14,6,59,2,91,35,8,72,3091,411,7,10,38,9,2,14,8,5,15,130,14,1000,5,104,2,548,806,12,704,812,143,399,2,30,3,5,1474,1246,3,5,6,26,1,142,661,19,1,1,1,1,58,136,232,975,155,30,1,26,166,38,5,3,47,9,79,92,27,41,3,1,28,6,4,1,1,6,27,27,14,46,8,25,4,6,2,45,72,1565,67,5,62,163,1,599,135,19,6,12,5,10,1,1,153,334,73,73,554,26,276,124,460,3,2,134,384,122,232,119,2301,2,18,1,66,18,1,3,29,155,32,556,5,56,4,86,2,4124,3,559,51,21,4,98,723,57,348,1066,440,997,19,6,12,5,10,1,1],"colorbar":{"title":{"text":"Number of Wineries in the US by Region <br>"}},"colorscale":[[0.0,"rgb(255,245,240)"],[0.125,"rgb(254,224,210)"],[0.25,"rgb(252,187,161)"],[0.375,"rgb(252,146,114)"],[0.5,"rgb(251,106,74)"],[0.625,"rgb(239,59,44)"],[0.75,"rgb(203,24,29)"],[0.875,"rgb(165,15,21)"],[1.0,"rgb(103,0,13)"]],"line":{"color":"rgba(102, 102, 102)","width":1},"opacity":0.8,"reversescale":true,"size":8,"symbol":"square"},"mode":"markers","text":["Arizona","Cochise County","Sonoita","Adelaida District","Alexander Valley","Alta Mesa","Amador County","Amador-Napa","Anderson Valley","Antelope Valley of the California High Desert","Arroyo Grande Valley","Arroyo Seco","Atlas Peak","Ballard Canyon","Ben Lomond Mountain","Bennett Valley","Big Valley District-Lake County","Calaveras County","California","California Other","California-Oregon","Calistoga","Capay Valley","Carmel Valley","Carneros","Carneros-Napa Valley","Central Coast","Central Valley","Chalk Hill","Chalone","Chiles Valley","Cienega Valley","Clarksburg","Clear Lake","Clements Hills","Cole Ranch","Contra Costa County","Coombsville","Cucamonga Valley","Diamond Mountain District","Dry Creek Valley","Dunnigan Hills","Edna Valley","El Dorado","El Dorado County","El Pomar District","Fair Play","Fiddletown","Fort Ross-Seaview","Green Valley","Guenoc Valley","Happy Canyon of Santa Barbara","High Valley","Howell Mountain","Humboldt County","Knights Valley","Lake County","Lake County-Mendocino County","Lake County-Sonoma County","Lake-Sonoma-Napa","Lime Kiln Valley","Livermore Valley","Lodi","Los Carneros","Madera","Malibu Coast","Malibu-Newton Canyon","Marin County","McDowell Valley","Mendocino","Mendocino County","Mendocino Ridge","Mendocino-Amador","Mendocino-Lake","Mendocino-Lake County-Napa","Mokelumne River","Monterey","Monterey County","Monterey County-Napa County","Monterey County-Napa County-Sonoma County","Monterey-San Luis Obispo-Santa Barbara","Monterey-Santa Barbara","Monterey-Santa Barbara-Sonoma","Monterey-Santa Cruz","Moon Mountain District Sonoma County","Mount Harlan","Mount Veeder","Mt. Harlan","Napa","Napa County","Napa County-Lake County","Napa County-Sonoma County","Napa County-Sonoma County-Lake County","Napa County-Sonoma County-San Joaquin County","Napa Valley","Napa Valley-Paso Robles","Napa-Amador","Napa-Carneros","Napa-Mendocino-Sonoma","Napa-Mendocino-Sonoma-Marin","Napa-Monterey-Mendocino","Napa-Sonoma","Nevada County","North Coast","Northern Sonoma","Oak Knoll District","Oakville","Paicines","Paso Robles","Paso Robles Highlands District","Paso Robles Willow Creek District","Pine Mountain-Cloverdale Peak","Placer County","Potter Valley","Ramona Valley","Red Hills Lake County","Redwood Valley","River Junction","Rockpile","Russian River Valley","Rutherford","Saddle Rock-Malibu","San Antonio Valley","San Benito County","San Bernabe","San Diego County","San Francisco Bay","San Francisco Bay-Livermore Valley","San Lucas","San Luis Obispo","San Luis Obispo County","Santa Barbara","Santa Barbara County","Santa Clara County","Santa Clara Valley","Santa Cruz County","Santa Cruz Mountains","Santa Lucia Highlands","Santa Margarita Ranch","Santa Maria Valley","Santa Ynez Valley","Shenandoah Valley (CA)","Sierra Foothills","Sierra Pelona Valley","Solano County","Solano County Green Valley","Sonoma","Sonoma Coast","Sonoma County","Sonoma County-Lake County","Sonoma County-Monterey County-Napa County","Sonoma County-Monterey County-Santa Barbara County","Sonoma County-Napa County","Sonoma County-Santa Barbara County","Sonoma Mountain","Sonoma Valley","Sonoma-Napa","Sonoma-Napa-Lake","Sonoma-Napa-Mendocino","Sonoma-Napa-Monterey","Sonoma-Santa Barbara-Mendocino","South Coast","Spring Mountain District","St. Helena","Sta. Rita Hills","Stags Leap District","Suisun Valley","Tehama County","Temecula","Temecula Valley","Templeton Gap District","Tuolumne County","Ventura County","Yolo County","York Mountain","Yorkville Highlands","Yountville","Colorado","Grand Valley","Western Connecticut Highlands","Hawaii","Idaho","Illinois","Iowa","Kentucky","Massachusetts","Southeastern New England","Lake Michigan Shore","Leelanau Peninsula","Michigan","Old Mission Peninsula","Augusta","Missouri","Nevada","New Jersey","Outer Coastal Plain","New Mexico","Cayuga Lake","Finger Lakes","Hudson River Region","Lake Erie","Long Island","New York","Niagara Escarpment","North Fork of Long Island","Seneca Lake","The Hamptons, Long Island","North Carolina","Swan Creek","Yadkin Valley","Grand River Valley","Isle St. George","Ohio","Applegate Valley","Chehalem Mountains","Columbia Gorge (OR)","Columbia Valley (OR)","Dundee Hills","Elkton Oregon","Eola-Amity Hills","McMinnville","Oregon","Oregon Other","Polk County","Ribbon Ridge","Rogue Valley","Southern Oregon","Umpqua Valley","Walla Walla Valley (OR)","Willamette Valley","Yamhill County","Pennsylvania","Southeastern New England","Texas","Texas High Plains","Texoma","Vermont","Middleburg","Monticello","Shenandoah Valley","Virginia","Virginia's Eastern Shore","Ancient Lakes","Chelan County","Columbia Gorge (WA)","Columbia Valley","Columbia Valley (WA)","Columbia Valley-Walla Walla Valley","Horse Heaven Hills","Lake Chelan","Naches Heights","Puget Sound","Rattlesnake Hills","Red Mountain","Snipes Mountain","Wahluke Slope","Walla Walla Valley (WA)","Washington","Yakima Valley","The Hamptons, Long Island","North Carolina","Swan Creek","Yadkin Valley","Grand River Valley","Isle St. George","Ohio"],"type":"scattergeo"}],                        {"geo":{"bgcolor":"#FFFFF0","countrycolor":"rgb(60, 64, 67)","countrywidth":0.5,"landcolor":"rgb(213, 216, 219)","projection":{"type":"albers usa"},"scope":"usa","showland":true,"subunitcolor":"rgb(60, 64, 67)","subunitwidth":0.5},"paper_bgcolor":"#FFFFF0","template":{"data":{"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"choropleth":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"choropleth"}],"contour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"contour"}],"contourcarpet":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"contourcarpet"}],"heatmap":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"heatmap"}],"heatmapgl":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"heatmapgl"}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"histogram2d":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2d"}],"histogram2dcontour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2dcontour"}],"mesh3d":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"mesh3d"}],"parcoords":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"parcoords"}],"pie":[{"automargin":true,"type":"pie"}],"scatter":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatter"}],"scatter3d":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatter3d"}],"scattercarpet":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattercarpet"}],"scattergeo":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergeo"}],"scattergl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergl"}],"scattermapbox":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattermapbox"}],"scatterpolar":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolar"}],"scatterpolargl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolargl"}],"scatterternary":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterternary"}],"surface":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"surface"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}]},"layout":{"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"autotypenumbers":"strict","coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]],"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]},"colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"geo":{"bgcolor":"white","lakecolor":"white","landcolor":"#E5ECF6","showlakes":true,"showland":true,"subunitcolor":"white"},"hoverlabel":{"align":"left"},"hovermode":"closest","mapbox":{"style":"light"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"bgcolor":"#E5ECF6","radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","gridwidth":2,"linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white"},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","gridwidth":2,"linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white"},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","gridwidth":2,"linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white"}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"ternary":{"aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"bgcolor":"#E5ECF6","caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"title":{"x":0.05},"xaxis":{"automargin":true,"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","zerolinewidth":2},"yaxis":{"automargin":true,"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","zerolinewidth":2}}},"title":{"text":"US Wineries by Region<br>(Hover for Regions)"}},                        {"responsive": true}                    )                };                            </script>        </div>
+
+<!-- Container Team Sect. -->
+<div id="services" class="container-fluid text-center">
+  <h2>Our Team</h2>
+  <div class="row slideanim">
+    <div class="col-sm-4">
+    </div>
+    <div class="col-sm-4">
+      <i class="fas fa-glass-cheers fa-4x"></i>
+      <br></br>
+      <p>This project is brought to you by: Alexander Espinosa, Amy Bednarz, Ashley Lutz, Michelle Herman, and Samantha Perez</p>
+       <p>Check out this project's GitHub Repository!</p>
+        <button onclick="document.location='https://github.com/ashleylynnl/Wine-or-Bust-Project'">GitHub Repo</button></p>
+    </div>
+    </div>
+  </div>
+</div>
+
+<!-- Bottom Cork Sect. -->
+<div class="jumbotron text-center">
+  <div class="jumbotron" style="background-image: url(https://afreespiritedgirl.files.wordpress.com/2013/11/img_2298.jpg); background-size: 100%;">
+    <div class="container for-about">
+    
+    </div>
+
+ </div>
+ </div>
+<form>
+
+      </div>
+    </div>
+  </form>
+</div>
+
+
+<footer class="container-fluid text-center">
+  <a href="#myPage" title="To Top">
+    <span class="glyphicon glyphicon-chevron-up"></span>
+  </a>
+  <p>Bootstrap Theme Starter Code: <a href="https://www.w3schools.com" title="Visit w3schools">www.w3schools.com</a></p>
+</footer>
+
+<script>
+$(document).ready(function(){
+  // Add smooth scrolling to all links in navbar + footer link
+  $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 900, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+  
+  $(window).scroll(function() {
+    $(".slideanim").each(function(){
+      var pos = $(this).offset().top;
+
+      var winTop = $(window).scrollTop();
+        if (pos < winTop + 600) {
+          $(this).addClass("slide");
+        }
+    });
+  });
+})
+</script>
+<script src="../static/js/plots.js"></script>
+</body>
+</html>
